@@ -24,6 +24,16 @@ class Login extends Component {
             this.setState({ token: googleUser.getAuthResponse().id_token });
         });
     }
+
+    // #5 Logout function implementation
+    logout = () => {
+        this.setState({ token: '' });
+        this.auth2.disconnect();
+    }
+
+    googleSDK = () => {
+        
+    }
 }
 
 export default Login;
