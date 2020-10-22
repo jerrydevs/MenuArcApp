@@ -6,7 +6,7 @@ const { check, validationResult } = require('express-validator')
 const _ = require('lodash')
 
 const auth = require('../middleware/auth')
-const User = require('../models/user')
+const User = require('../models/User')
 
 const router = express.Router()
 
@@ -66,7 +66,7 @@ router.post(
       console.error(err.message)
       res.status(500).send('Server error')
     }
-  }
+  },
 )
 
 // @route    DELETE api/users

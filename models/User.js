@@ -20,10 +20,16 @@ const UserSchema = new mongoose.Schema({
   lastName: {
     type: String,
   },
+  restaurants: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Restaurant',
+    },
+  ],
   createdAt: {
     type: Date,
     default: Date.now(),
   },
 })
 
-module.exports = mongoose.model('user', UserSchema)
+module.exports = mongoose.model('User', UserSchema)
